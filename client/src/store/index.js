@@ -24,13 +24,3 @@ export default new Vuex.Store({
   plugins: [dataState],
 });
 
-/*const store = new Vuex.Store({
-  modules: {
-    auth: authModule,
-    cart,
-    products,
-  },
-  /*plugins: [dataState],*/
-//});
-
-//export default store;

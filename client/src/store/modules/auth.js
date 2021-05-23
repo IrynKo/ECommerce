@@ -13,14 +13,10 @@ export default {
   },
   mutations: {
     SET_USER_DATA(state, userData) {
-      //console.log("userData", userData);
-      //setUserData(state, userData) {
       state.user = userData;
     },
     SET_TOKEN(state, token) {
-      //setToken(state, token) {
       state.token = token;
-      //console.log("token", token);
     },
     CLEAR_USER_DATA(state) {
       Object.assign(state, { ...initialState });
@@ -31,10 +27,8 @@ export default {
       const { data } = await loginUser(payload);
 
       const { user, token } = data.data;
-      commit("SET_USER_DATA", user /*{ ...user, token: token }*/);
+      commit("SET_USER_DATA", user);
       commit("SET_TOKEN", token);
-      //commit("setUserData", user);
-      //commit("setToken", token);
     },
     async registration({ commit }, payload) {
       const { data } = await registerUser(payload);
@@ -42,8 +36,6 @@ export default {
 
       commit("SET_USER_DATA", user);
       commit("SET_TOKEN", token);
-      //commit("setUserData", user);
-      //commit("setToken", token);
     },
     async logOut({ commit }) {
       await logout();

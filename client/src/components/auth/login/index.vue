@@ -1,6 +1,6 @@
 <template>
   <AuthContainer class="login">
-    <MainTitle class="login__title">Login</MainTitle>
+    <MainTitle class="login__title">Sign In</MainTitle>
     <Form ref="form" class="login__form" @submit.prevent="handleSubmit">
       <CustomInput
         v-model="formData.email"
@@ -19,7 +19,7 @@
         :rules="passwordRules"
         class="login__input"
       />
-      <Button type="submit" class="login__btn" :loading="loading">Login</Button>
+      <Button type="submit" class="login__btn" :loading="loading">Sign In</Button>
     </Form>
   </AuthContainer>
 </template>
@@ -66,14 +66,13 @@ export default {
       return [this.rules.isRequired, this.rules.emailValidation];
     },
     passwordRules() {
-      return [this.rules.isRequired /*, this.rules.passwordValidation*/];
+      return [this.rules.isRequired ];
     },
   },
   methods: {
     ...mapActions("auth", ["login"]),
     async handleSubmit() {
       const isFormValid = this.$refs.form.validate();
-      //console.log("this.formData", this.formData);
       if (isFormValid) {
         try {
           this.loading = true;
@@ -81,7 +80,6 @@ export default {
           await this.login(this.formData);
 
           this.$router.push({ name: "Products" });
-          // console.log("data", this.$store.state);
         } catch (error) {
           this.$notify({
             type: "error",

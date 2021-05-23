@@ -3,10 +3,6 @@ export const isRequired = (val) => ({
   message: 'Please, fill this field',
 });
 
-export const charLimit = (limit) => (val) => ({
-  hasPassed: val.length <= limit,
-  message: 'You have passed the limit',
-});
 export const emailValidation = (val) => ({
   hasPassed: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(val),
   message: 'Wrong email',

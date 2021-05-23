@@ -1,6 +1,6 @@
 <template>
   <AuthContainer class="login">
-    <MainTitle class="registration__title">Registration</MainTitle>
+    <MainTitle class="registration__title">Sign Up</MainTitle>
     <Form ref="form" class="registration__form" @submit.prevent="handleSubmit">
       <CustomInput
         v-model="formData.username"
@@ -97,6 +97,7 @@ export default {
       return [
         (val) => ({
           hasPassed: val === this.formData.password,
+          message: "Passwords do not match",
         }),
       ];
     },
@@ -118,7 +119,6 @@ export default {
           });
 
           this.$router.push({ name: "login-page" });
-          //console.log("data", this.$store.state);
           form.reset();
         } catch (error) {
           this.$notify({

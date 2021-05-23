@@ -54,7 +54,6 @@ export default {
     justify-content: space-between;
     width: 90%;
     padding: 5px 16px;
-    //border: 1px solid #a29d9624;
     border-left: none;
     align-self: center;
   }

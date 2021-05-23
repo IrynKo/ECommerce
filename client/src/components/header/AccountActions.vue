@@ -50,7 +50,6 @@ export default {
         this.clearCart();
         const { requiresAuth } = this.$route.meta;
 
-        //console.log(requiresAuth);
         if (!requiresAuth) {
           this.$router.push({ name: "login-page" });
         } else this.$router.push({ name: "login-page" });

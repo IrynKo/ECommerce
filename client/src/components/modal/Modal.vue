@@ -21,8 +21,7 @@ export default {
       default: "",
     },
   },
-  /*data() {},
-  computed: {},*/
+  
   methods: {
     closeModal() {
       this.$emit("closeModal");

@@ -18,7 +18,7 @@
 
 <script>
 import OrderItemsDetails from "./OrderItemsDetails";
-//import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "OrderItem",
   components: {
@@ -30,9 +30,6 @@ export default {
       required: true,
     },
   },
-  /*created() {
-    console.log(this.item, "ITEM");
-  },*/
 };
 </script>
 
@@ -44,14 +41,15 @@ export default {
     border-bottom: 1px solid #a8aaac;
     font-size: 24px;
     margin-bottom: 20px;
+    padding-bottom: 10px;
   }
   &__title span {
     font-size: 18px;
   }
   &__total {
     display: block;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 }
 </style>

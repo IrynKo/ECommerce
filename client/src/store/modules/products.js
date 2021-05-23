@@ -2,7 +2,7 @@ import {
   getProductById,
   getProductsList,
 } from "../../services/product.service";
-//import axios from "../../utils/axios";
+
 
 export default {
   state: {
@@ -26,14 +26,12 @@ export default {
   },
   actions: {
     getProducts: async ({ commit }) => {
-      //const res = await axios.get("/products");
       const { data } = await getProductsList();
       commit("SET_PRODUCTS", data);
     },
 
     getOneProduct: async ({ commit }, id) => {
       const res = await getProductById(id);
-      //console.log("product", res.data);
       commit("SET_PRODUCT", res.data);
     },
     cleanup: ({ commit }) => {

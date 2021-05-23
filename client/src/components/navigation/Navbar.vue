@@ -77,7 +77,6 @@ export default {
   background-color: #a4947d;
   display: flex;
   align-items: center;
-  //justify-content: space-evenly;
   &__logo {
     flex: 2 1 0;
     text-decoration: none;

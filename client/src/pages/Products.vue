@@ -17,8 +17,7 @@ export default {
   },
   created() {
     this.getProducts();
-    //this.getOrders();
-    //console.log("ORDERS", this.orders);
+    
   },
 };
 </script>

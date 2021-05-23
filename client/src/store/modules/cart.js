@@ -1,6 +1,5 @@
-//const initialState = [];
+
 export default {
-  //namespaced: true,
   state: {
     cart: [],
   },
@@ -39,7 +38,6 @@ export default {
       if (exists) {
         if (exists.quantity > 0) {
           exists.quantity -= quantity;
-          //console.log("exists.quantity", exists.quantity);
           return;
         } else return;
       }
@@ -47,24 +45,14 @@ export default {
       state.cart.push({ product, quantity });
     },
     DELETE_FROM_CART: (state, product) => {
-      /*state.cart.filter((item) =>
-        console.log(
-          "product._id",
-          product._id,
-          "item.product._id",
-          item.product._id
-        )
-      );*/
       state.cart = state.cart.filter(
         (item) => item.product._id !== product._id
       );
-      //console.log("DeleteProduct", product);
-      //console.log("Deletestate.cartProduct", state.cart);
+      
       return;
     },
     CLEAR_CART_DATA(state) {
       state.cart = [];
-      //Object.assign(state, { ...initialState });
     },
   },
   actions: {

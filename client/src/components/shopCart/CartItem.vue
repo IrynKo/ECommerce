@@ -17,7 +17,7 @@
         >
           -
         </button>
-        {{ order.quantity }}
+        <span class="orders-item__btn-qnt">{{ order.quantity }}</span> 
         <button
           class="orders-item__btn-minus"
           @click="addProductToCart({ product: order.product, quantity })"
@@ -46,7 +46,7 @@ export default {
       required: true,
     },
   },
-  //props: ["order", "_id"],
+  
   data() {
     return {
       quantity: 1,
@@ -63,9 +63,7 @@ export default {
       "deleteProductFromCart",
     ]),
   },
-  /* created() {
-    console.log("IIII", this.order);
-  },*/
+ 
 };
 </script>
 
@@ -89,10 +87,21 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // width: 55%;
     padding: 20px;
-    // border: 2px solid #e1efff;
     border-left: none;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+  }
+  &__btn-plus,
+  &__btn-minus {
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+  }
+  &__btn-qnt {
+    font-size: 20px;
   }
   &__price {
     font-size: 20px;
@@ -111,12 +120,14 @@ export default {
     color: #6d5c47;
   }
   &__btn-delete {
-    width: 100px;
+    width: 160px;
+    border-radius: 5px;
+    color: #9a7d63;
     padding: 7px 0;
     background: transparent;
     border: none;
-    border: 1px solid #6d5c47;
-    font-size: 14px;
+    border: 1px solid #8b7457;
+    font-size: 16px;
   }
 }
 </style>
